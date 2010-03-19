@@ -3,10 +3,6 @@ WEB-INF
 SplashCMS.esproj
 */.DS_Store
 .project
-/config/design/settings.cfm
-/config/development/settings.cfm
-/config/maintenance/settings.cfm
-/config/production/settings.cfm
 /public/pages/*
 /public/layouts/*
 /public/snippets/*
