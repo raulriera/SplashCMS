@@ -10,7 +10,6 @@ h2. Installation
 # Unzip the archive to the root of your webserver
 # Create a MySQL or MSSQL database named whatever you want
 # Open the Railo web-admin or ColdFusion admin and add a DSN for the database you created.
-# Open config/environment.cfm and set the appropriate environment for your install
 # Open the Splash Admin. (http://yourwebroot/admin)
 # Use the DBMigration Plugin to "migrate" your site (will create all tables and insert the initial data)
 # Login. (http://yourwebroot/admin) Default username is 'admin' and password is 'splash' and start building your site!
