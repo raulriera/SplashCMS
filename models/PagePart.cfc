@@ -7,8 +7,7 @@
 	<cffunction name="init">
 		<cfset belongsTo('page')>
 	    <cfset beforeUpdate('deleteOldFile')>
-        <cfset afterCreate('write')>
-	    <cfset afterUpdate('write')>
+        <cfset afterSave('write')>
 	</cffunction>
 	
 	<cffunction name="write">

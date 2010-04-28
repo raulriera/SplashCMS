@@ -9,8 +9,7 @@
 
         <cfset beforeCreate('setCreatedByID')>
         <cfset beforeUpdate('setUpdatedByID,deleteOldFile')>
-        <cfset afterCreate('write')>
-	    <cfset afterUpdate('write')>
+        <cfset afterSave('write')>
     </cffunction>
 
     <cffunction name="write">
