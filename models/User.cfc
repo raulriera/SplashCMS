@@ -11,7 +11,7 @@
 		<cfset validatesUniquenessOf(property="email", message="That email already exists.")>
 		<cfset validatesConfirmationOf(property="password",message="The passwords you entered did not match.") />
 		<cfset validatesLengthOf(property="username", within="4,25", message="Your username must be 4 - 25 characters long", allowBlank="false")>
-    <cfset validatesFormatOf(property="email", regEx="^[\_]*([a-z0-9]+(\.|\_*)?)+@([a-z][a-z0-9\-]+(\.|\-*\.))+[a-z]{2,6}$", message="That email address is not valid")>
+		<cfset validatesFormatOf(property="email", regEx="^[\_]*([a-z0-9]+(\.|\_*)?)+@([a-z][a-z0-9\-]+(\.|\-*\.))+[a-z]{2,6}$", message="That email address is not valid")>
     
 		<!--- this callback is for encypting the password after validation and before saving the user --->
 		<cfset beforeCreate("setPassword, setCreatedByID") />
