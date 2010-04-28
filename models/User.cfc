@@ -14,8 +14,8 @@
 		<cfset validatesFormatOf(property="email", regEx="^[\_]*([a-z0-9]+(\.|\_*)?)+@([a-z][a-z0-9\-]+(\.|\-*\.))+[a-z]{2,6}$", message="That email address is not valid")>
     
 		<!--- this callback is for encypting the password after validation and before saving the user --->
-		<cfset beforeCreate("setPassword, setCreatedByID") />
-		<cfset beforeUpdate("checkPassword, setUpdatedByID")>
+		<cfset beforeCreate("setPassword,setCreatedByID") />
+		<cfset beforeUpdate("checkPassword,setUpdatedByID")>
 	</cffunction>
 	
 	<cffunction name="isPassword">
