@@ -265,6 +265,10 @@ body {
   text-align: right;
 }
 
+.table tbody tr:hover {
+	background: #ffb;
+}
+
 /* forms */
 
 input.checkbox {
