@@ -19,14 +19,14 @@
     </cffunction>
 
     <cffunction name="getChildren" access="public">
-		<cfset var loc = arguments.attributeCollection >
+		<cfset var loc = arguments.attributeCollection>
 		<cfset var childPages = "">
 		
 		<cfif StructKeyExists(loc, "where") >
 			<cfset loc.where = "(" & loc.where>
-			<cfset loc.where &= ") AND (parentID = #this.id#)">
+			<cfset loc.where &= ") AND (parentID = #this.id# AND status = 'Published' AND pageClassId = 1)">
 		<cfelse>
-			<cfset loc.where = "parentID = #this.id#">
+			<cfset loc.where = "parentID = #this.id# AND status = 'Published' AND pageClassId = 1">
 		</cfif>
 		
 		<cfset childPages = this.findAll(argumentCollection=loc)>
