@@ -1,9 +1,9 @@
 <cfcomponent extends="Model" output="false">
 
     <cffunction name="init">
-		<cfset hasMany('PageParts')>
+		<cfset hasMany('pageParts')>
         <cfset belongsTo(name='pageLayout', class="layout", foreignKey="layoutID")>      
-        <cfset belongsTo('PageClass')>
+        <cfset belongsTo('pageClass')>
         <cfset belongsTo(name="author", class="user", foreignKey="createdByID")>
 
         <cfset validatesPresenceOf(property="title" , message="Your page must have a title.")>

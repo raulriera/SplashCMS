@@ -1,5 +1,4 @@
-<cfif thisTag.executionMode IS "start">
-  
+<cfif thisTag.executionMode IS "start"> 
     <cfparam name="attributes.part" default="">
     <cfparam name="attributes.page" default="#request.page#">
 
