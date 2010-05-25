@@ -4,12 +4,12 @@
 		<cfset hasMany("pages")>
 		
 		<cfset validatesPresenceOf(property="username", message="Username is required")>
-		<cfset validatesPresenceOf(property="email" , message="Email is required.")>
+		<cfset validatesPresenceOf(property="email", message="Email is required.")>
 		<cfset validatesPresenceOf(property="password", message="Password is required")>
-		<cfset validatesPresenceOf(property="name" , message="Name is required")>
-		<cfset validatesUniquenessOf(property="username", message="That username that is already in our system.", when="onCreate")>
+		<cfset validatesPresenceOf(property="name", message="Name is required")>
+		<cfset validatesUniquenessOf(property="username", message="That username is already in our system.")>
 		<cfset validatesUniquenessOf(property="email", message="That email already exists.")>
-		<cfset validatesConfirmationOf(property="password",message="The passwords you entered did not match.") />
+		<cfset validatesConfirmationOf(property="password", message="The passwords you entered did not match.") />
 		<cfset validatesLengthOf(property="username", within="4,25", message="Your username must be 4 - 25 characters long", allowBlank="false")>
 		<cfset validatesFormatOf(property="email", regEx="^[\_]*([a-z0-9]+(\.|\_*)?)+@([a-z][a-z0-9\-]+(\.|\-*\.))+[a-z]{2,6}$", message="That email address is not valid")>
     
