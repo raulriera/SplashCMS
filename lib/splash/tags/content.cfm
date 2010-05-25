@@ -2,13 +2,20 @@
     <cfparam name="attributes.part" default="">
     <cfparam name="attributes.page" default="#request.page#">
 
-    <cfset wheelsProxy=CreateObject("component","controllers.Controller") >
- 
+	<!--- Check if we are inside a "children" related tag --->
+	<cfif StructKeyExists(request, "tags")>
+		<cfset attributes.page = request.tags.currentChild>
+	</cfif>
+	
+	<!--- Create a wheels proxy so we can use their methods inside a custom tag --->
+    <cfset wheelsProxy = CreateObject("component","controllers.Controller")>
+	
+	<!--- Find the desired part --->
     <cfset pagePart = wheelsProxy.wheelsExecute("model('pagePart').findByPage(pageID=#attributes.page.ID#, part = '#attributes.part#')")>
     
-    <cfif isObject(pagePart)>
+    <cfif IsObject(pagePart)>
         <cfoutput>
-        <cfif pagePart.fileName is Not "">
+        <cfif pagePart.fileName IS NOT "">
             <cfif fileExists(expandPath("#application.defaults.rootPath#public/pages/#pagePart.filename#"))>
               <cfinclude template="#application.defaults.rootPath#public/pages/#pagePart.filename#">
             <cfelse>

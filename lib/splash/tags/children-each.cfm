@@ -16,7 +16,7 @@ Since any decendent tag expects an object, the returnAs parameter is forced to b
 	<cfset attributes.returnAs = "objects">
 	
 	<!--- TODO: Find a way to not re-run getChildren if you already have the right data --->
-	<cfset request.tags.page.kids = request.tags.page.getChildren(attributeCollection = attributes) >
+	<cfset request.tags.page.kids = request.tags.page.getChildren(attributeCollection = attributes)>
 	<cfset request.tags.loopIndex = 1>
 	<cfset request.tags.currentChild = request.tags.page.kids[request.tags.loopIndex]>
 </cfif>
