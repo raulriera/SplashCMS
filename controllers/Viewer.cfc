@@ -10,7 +10,7 @@
 	<cffunction name="index">
         <cfparam name="params.slug" default="/">
         
-        <cfset request.page = model('page').findOneBySlug(params.slug)>
+        <cfset request.page = model('page').findOneBySlug(value=params.slug, include="author")>
 
         <cfif isObject(request.page) AND request.page.status is "published">
             <cfset request.layout = request.page.pageLayout() />

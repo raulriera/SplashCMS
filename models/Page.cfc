@@ -29,6 +29,10 @@
 			<cfset loc.where = "parentID = #this.id# AND status = 'Published' AND pageClassId = 1">
 		</cfif>
 		
+		<!--- Handle the "include" argument --->
+		<cfset loc.include = "author">
+		
+		<!--- Find the children --->
 		<cfset childPages = this.findAll(argumentCollection=loc)>
   	
         <cfreturn childPages>
