@@ -78,7 +78,7 @@
   	  #select(label="", objectName="page", property="status", options=status)#
   </p>
 
-	  	<p>#submitTag(class="ui-button ui-state-default ui-corner-all", value="Update Page &rarr;")# or #linkTo(text="Cancel", route="pages_path")#</p>
+	  	<p>#submitTag(class="ui-button ui-state-default ui-corner-all", value="Update Page &rarr;")# or #linkTo(text="Back To Pages", route="pages_path")#</p>
 
 	#endFormTag()#
 
