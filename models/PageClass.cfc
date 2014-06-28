@@ -3,9 +3,10 @@
 <!--- @@Copyright: Copyright (c) 2009 Mad Piranha, Inc.. All rights reserved. --->
 <!--- @@License: --->
 <cfcomponent output="false" extends="Model">
-	
+
 	<cffunction name="init">
+		<cfset table("cms_pageclasses")>
 		<cfset hasMany("Pages")>
 	</cffunction>
-	
+
 </cfcomponent>

@@ -1,11 +1,15 @@
 <cfcomponent extends="Wheels" output="false">
 
   <cffunction name="setCreatedByID">
-    <cfset this.createdById = session.currentUser.id>
+  	<cfif structKeyExists(session, "currentUser")>
+    	<cfset this.createdById = session.currentUser.id>
+    </cfif>
   </cffunction>
-  
+
   <cffunction name="setUpdatedByID">
-    <cfset this.updatedById = session.currentUser.id>
+  	<cfif structKeyExists(session, "currentUser")>
+  	    <cfset this.updatedById = session.currentUser.id>
+  	</cfif>
   </cffunction>
-  
+
 </cfcomponent>

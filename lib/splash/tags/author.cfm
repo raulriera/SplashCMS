@@ -1,8 +1,20 @@
-<cfif thisTag.executionMode is "start">
+<cfif thisTag.executionMode is "start"><cfoutput>#generateContent()#</cfoutput></cfif><cfsilent>
+
+<!--- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --->
+
+<cffunction name="generateContent" returnType="string" access="public" output="false">
+	<cfset var sReturn = "">
+
 	<!--- Check if we are inside a "children" related tag --->
 	<cfif StructKeyExists(request, "tags")>
-		<cfoutput>#request.tags.currentChild.author.name#</cfoutput>
+		<cfset sReturn = request.tags.currentChild.author.name>
 	<cfelse>
-		<cfoutput>#request.page.author.name#</cfoutput>
+		<cfset sReturn = request.page.author.name>
 	</cfif>
-</cfif>
+
+	<cfreturn sReturn>
+</cffunction>
+
+<!--- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --->
+
+</cfsilent>
